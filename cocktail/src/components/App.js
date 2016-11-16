@@ -6,7 +6,9 @@ import Main from './Main';
 
 function mapStateToProps(state) {
   return {
-    cocktails: state.cocktails
+    cocktails: state.cocktails,
+    ingredients: state.ingredients,
+    inventory: state.inventory
   }
 }
 

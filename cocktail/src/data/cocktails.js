@@ -1,6 +1,12 @@
 const cocktails = [
    {
       "name":"Absolut Passion",
+      "components": [
+         "Absolut Mandrin",
+         "Passoã",
+         "limejuice",
+         "fruktsoda"
+      ],
       "ingredients": [
          "3 cl Absolut Mandrin",
          "3 cl Passoã",
@@ -13,6 +19,11 @@ const cocktails = [
    },
    {
       "name":"Dry Martini",
+      "components": [
+         "gin",
+         "vermouth",
+         "oliver"
+      ],
       "ingredients": [
          "5 cl gin",
          "1 cl vermouth",
@@ -24,6 +35,13 @@ const cocktails = [
    },
    {
       "name":"Frozen Mojito",
+      "components": [
+         "ljus rom",
+         "limejuice",
+         "sockerlag",
+         "mynta",
+         "krossad is"
+      ],
       "ingredients": [
          "4 cl ljus rom",
          "3 cl limejuice",
@@ -37,6 +55,10 @@ const cocktails = [
    },
    {
       "name":"Gin & Tonic",
+      "components": [
+         "gin",
+         "tonic"
+      ],
       "ingredients": [
          "6 cl gin",
          "20 cl tonic"
@@ -47,6 +69,15 @@ const cocktails = [
    },
    {
       "name":"Indian Mule",
+      "components": [
+         "vodka",
+         "citronjuice",
+         "sockerlag",
+         "ingefära",
+         "Angostura Bitter",
+         "sodavatten",
+         "mynta"
+      ],
       "ingredients": [
          "6 cl vodka",
          "1.5 cl citronjuice",
@@ -62,6 +93,11 @@ const cocktails = [
    },
    {
       "name":"Whisky Sour",
+      "components": [
+         "whisky",
+         "citronjuice",
+         "sockerlag"
+      ],
       "ingredients": [
          "6 cl whisky",
          "3 cl citronjuice",

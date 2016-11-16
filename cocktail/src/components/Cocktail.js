@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import RecipeIngredient from './RecipeIngredient';
 
 class Cocktail extends Component {
+
   render() {
     const { cocktail } = this.props;
     return (
@@ -13,7 +15,16 @@ class Cocktail extends Component {
         </div>
 
         <figcaption>
-          <p>{cocktail.name}</p>
+          <div className="cocktail-info">
+            <p>{cocktail.name}</p>
+          </div>
+          {cocktail.components.map((component, index) => 
+            <RecipeIngredient
+              key={index}
+              component={component}
+              inventory={this.props.inventory}
+            />
+          )}
         </figcaption>
 
       </figure>

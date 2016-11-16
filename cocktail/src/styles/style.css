@@ -193,6 +193,16 @@ body {
   background: #fafafa;
   font-size: 1.5rem;
 }
+
+.ingredient-search {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.ingredient-search input {
+  width: 33%;
+}
+
 .photo-grid {
   display: flex;
   flex-wrap: wrap;
@@ -245,6 +255,39 @@ body {
 
 .description {
   padding: 1rem 0;
+}
+
+.cocktail-info {
+  margin-left: 0.2rem;
+}
+
+.component-span {
+  float: left;
+  margin-left: 0.2rem;  
+  margin-bottom: 1rem;
+  padding: 2px;
+  border-radius: 0.3rem;
+  color: white;
+  background-color: #bebebe;
+}
+
+.component-span-has {
+  float: left;
+  margin-left: 0.2rem;  
+  margin-bottom: 1rem;
+  padding: 2px;
+  border-radius: 0.3rem;
+  color: white;
+  background-color: #848484;
+}
+
+.ingredient-list {
+  display: block;
+  background-color: #bebebe;
+}
+
+.ingredient-list:hover {
+  background-color: #d9d9d9;
 }
 
 ul {

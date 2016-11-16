@@ -11,7 +11,7 @@ class Single extends Component {
 
     return (
       <div className="single-photo">
-        <Cocktail cocktail={cocktail} />
+        <Cocktail {...this.props} cocktail={cocktail} />
         <Recipe ingredients={ingredients} description={description}>
         </Recipe>
       </div>

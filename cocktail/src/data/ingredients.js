@@ -1,20 +1,24 @@
-const ingredients = [
+const sampleIngredients = [
    {
-      "name":"Absolut Vodka",
-      "type":"Vodka",
+      "name":"absolut vodka",
+      "type":"vodka",
    },
    {
-      "name":"Havana Club Añejo Blanco",
-      "type":"Rum",
+      "name":"havana club añejo blanco",
+      "type":"rom",
    },
    {
-      "name":"Bacardi Razz",
-      "type":"Vodka",
+      "name":"bacardi razz",
+      "type":"vodka",
    },
    {
-      "name":"Bacardi 8 años",
-      "type":"Rum",
+      "name":"bacardi 8 años",
+      "type":"rom",
    },
+   {
+      "name":"sockerlag",
+      "type":"sockerlag"
+   }
 ];
 
-export default ingredients;
+export default sampleIngredients;
