@@ -1,10 +1,7 @@
 function inventory(state = [], action) {
   switch(action.type) {
     case 'ADD_TO_INVENTORY':
-      return [...state, {
-        name: action.name,
-        category: action.category
-      }];
+      return [...state, action.ingredient];
     default:
       return state;
   }

@@ -1,12 +1,13 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import cocktails from './cocktails';
+import cocktail from './cocktail';
 import ingredients from './ingredients';
 import inventory from './inventory';
+import suggestions from './suggestions';
 
 const rootReducer = combineReducers({
-  cocktails, ingredients, inventory, routing: routerReducer
+  cocktail, ingredients, inventory, suggestions, routing: routerReducer
 });
 
 export default rootReducer;

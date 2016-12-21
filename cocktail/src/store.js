@@ -5,12 +5,11 @@ import { browserHistory } from 'react-router';
 
 import rootReducer from './reducers/index';
 
-import cocktails from './data/cocktails';
-
 const defaultState = {
-  cocktails,
+  cocktail: {},
   ingredients: [],
-  inventory: []
+  inventory: [],
+  suggestions: [],
 };
 
 const store = createStore(

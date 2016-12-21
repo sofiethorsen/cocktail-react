@@ -5,7 +5,8 @@ class Recipe extends Component {
     return (
       <div className="recipe">
         <ul className="list-of-ingredients">
-          {this.props.ingredients.map((ingredient, index) => <li key={index}>{ingredient}</li>)}
+          {Object.keys(this.props.ingredients).map((ingredient, index) => 
+            <li key={index}>{this.props.ingredients[ingredient]} {ingredient}</li>)}
         </ul>
         <div className="description">
           {this.props.description}

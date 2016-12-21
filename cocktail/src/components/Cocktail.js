@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import RecipeIngredient from './RecipeIngredient';
 
 class Cocktail extends Component {
 
   render() {
     const { cocktail } = this.props;
+    const name = cocktail[0];
+    const details = cocktail[1];
     return (
       <figure className="grid-figure">
         <div className="grid-photo-wrap">
-          <Link to={`/cocktail/${cocktail.id}`}>
-            <img className="grid-photo" src={cocktail.display_src} alt={cocktail.name} />
+          <Link to={`/cocktail/${details.recipe_id}`}>
+            <img className="grid-photo" src={details.display_src} alt={name} />
           </Link>
         </div>
 
         <figcaption>
           <div className="cocktail-info">
-            <p>{cocktail.name}</p>
+            <p>{name}</p>
           </div>
-          {cocktail.components.map((component, index) => 
-            <RecipeIngredient
-              key={index}
-              component={component}
-              inventory={this.props.inventory}
-            />
+          {details.matches.map((component) => 
+            <span key={component} className="component-span-has">
+              {component}
+            </span>
+          )}
+          {details.nonMatches.map((component) => 
+            <span key={component} className="component-span">
+              {component}
+            </span>
           )}
         </figcaption>
 

@@ -12,7 +12,12 @@ class Search extends Component {
     e.preventDefault();
 
     const searchTerm = this.refs.ingredient.value;
-    this.props.searchForIngredient(searchTerm);
+    if (searchTerm.length === 0) {
+      this.props.clearSearch();
+    }
+    if (searchTerm.length > 1) {
+      this.props.fetchIngredients(searchTerm);
+    }
   }
 
   render() {
@@ -25,13 +30,14 @@ class Search extends Component {
           placeholder="Search for ingredients"/>
         <div className="ingredient-result">
           <ul>
-            {this.props.ingredients.map((ingredient, i) => 
+            {this.props.ingredients.slice(0, 15).map((ingredient, i) => 
               <Ingredient 
                 addToInventory={this.props.addToInventory}
+                ingredient={ingredient}
+                fetchRecipesByIngredients={this.props.fetchRecipesByIngredients}
+                inventory={this.props.inventory}
                 clearSearch={this.props.clearSearch}
-                key={i} 
-                name={ingredient.name}
-                category={ingredient.type} />)}
+                key={i} />)}
           </ul>
         </div>
       </div>

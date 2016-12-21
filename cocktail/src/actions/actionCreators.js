@@ -1,6 +1,8 @@
+import fetch from 'isomorphic-fetch'
+
 export function requestIngredients(searchTerm) {
   return {
-    type:'REQUEST_INGREDIENTS',
+    type: 'REQUEST_INGREDIENTS',
     searchTerm
   }
 }
@@ -8,23 +10,75 @@ export function requestIngredients(searchTerm) {
 export function receiveIngredients(json) {
   return {
     type: 'RECEIVE_INGREDIENTS',
-    posts: json.data.children.map(child => child.data),
-    receivedAt: Date.now()
+    ingredients: json.result
   }
 }
 
-export function searchForIngredient(searchTerm) {
+export function fetchIngredients(searchTerm) {
+  return function (dispatch) {
+    dispatch(requestIngredients(searchTerm));
+    return fetch(`http://0.0.0.0:8080/ingredients/${searchTerm}`)
+      .then(response => response.json())
+      .then(json =>
+        dispatch(receiveIngredients(json))
+      )
+  }
+}
+
+export function requestRecipesByIngredients(ingredients) {
   return {
-    type: 'SEARCH_INGREDIENT',
-    searchTerm,
+    type: 'REQUEST_RECIPES_BY_INGREDIENTS',
+    ingredients
   }
 }
 
-export function addToInventory(name, category) {
+export function recieveRecipesByIngredients(json) {
+  return {
+    type: 'RECEIVE_RECIPES_BY_INGREDIENTS',
+    suggestions: json.result.recipes
+  }
+}
+
+export function fetchRecipesByIngredients(ingredients) {
+  return function (dispatch) {
+    dispatch(requestRecipesByIngredients(ingredients));
+    return fetch(`http://0.0.0.0:8080/recipesbyingredients?key=${ingredients.join(",")}`)
+      .then(response => response.json())
+      .then(json =>
+        dispatch(recieveRecipesByIngredients(json))
+      )
+  }
+}
+
+export function requestRecipeById(recipeId) {
+  return {
+    type: 'REQUEST_RECIPE_BY_ID',
+    recipeId
+  }
+}
+
+export function receiveRecipeById(json) {
+  return {
+    type: 'RECEIVE_RECIPE_BY_ID',
+    recipe: json.result
+  }
+}
+
+export function fetchRecipeById(recipeId) {
+  return function (dispatch) {
+    dispatch(requestRecipeById(recipeId));
+    return fetch(`http://0.0.0.0:8080/recipebyid/${recipeId}`)
+      .then(response => response.json())
+      .then(json =>
+        dispatch(receiveRecipeById(json))
+      )
+  }
+}
+
+export function addToInventory(ingredient) {
   return {
     type: 'ADD_TO_INVENTORY',
-    name,
-    category
+    ingredient
   }
 }
 

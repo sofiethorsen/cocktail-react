@@ -8,7 +8,7 @@ class CocktailGrid extends Component {
       <div>
         <Search {...this.props} />
         <div className="photo-grid">
-          {this.props.cocktails.map(
+          {this.props.suggestions.map(
             (cocktail, index) => 
               <Cocktail 
                 {...this.props} 
